@@ -1,0 +1,9 @@
+<h1>My Tasks</h1>
+
+<ol type="checkbox">
+  <% @tasks.each do |task| %>
+    <li> <%= link_to task.title, tasks_path(task) %> - <%= link_to "Edit", edit_task_path(task) %> - <%= link_to "Delete", task_path(task), method: :delete, data: { confirm: "Estas segurito?" } %> </li>
+  <% end %>
+</ol>
+
+<%= link_to "Create new tasks", new_task_path %>
